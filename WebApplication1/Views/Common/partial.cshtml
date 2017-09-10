@@ -1,0 +1,23 @@
+﻿@model List<string>
+<p>partial</p>
+@{ 
+    if (PageData.Count > 0) {
+        foreach (var a in PageData) {
+            <text>@a.Value</text>
+        }
+    }
+}
+
+@TempData["cart"]
+
+@{
+    if (Model != null)
+    {
+        <ul>
+            @foreach (var a in Model)
+            {
+                <li>@a</li>
+            }
+        </ul>
+    }
+}

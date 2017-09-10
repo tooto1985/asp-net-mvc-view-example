@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@*定義Model類型*@
+@model List<string>
+
+@*顯示Model資料*@
+<ul>
+    @foreach (var a in Model)
+    {
+        <li>@a</li>
+    }
+</ul>
+
+<hr />
+
+
+<div>RenderPage</div>
+@RenderPage("partial.cshtml", new object[] { "aaa", "bbb", "ccc" })
+
+<hr />
+
+<div>Html.Partial</div>
+@Html.Partial("partial");
+
+<hr />
+
+
+<div>Html.RenderPartial</div>
+@{
+    Html.RenderPartial("partial");
+}
+
+<hr />
+
+
+<div>Html.RenderAction</div>
+@{ 
+    Html.RenderAction("partial");
+}
+
+
+
+
+@section scripts {
+    <script>
+        alert("ok");
+    </script>
+}
+
+@section styles {
+    <style>
+        body {
+            background-color: pink
+        }
+    </style>
+}
+
